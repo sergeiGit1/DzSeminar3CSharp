@@ -5,16 +5,25 @@
 // 12821 -> да
 // 23432 -> да
 Console.WriteLine("Введите число: ");
-var number = Console.ReadLine();
-
-if (number[0] == number[4] && number[1] == number[3])
+string number = Console.ReadLine();
+int numberA;
+bool isNumber = int.TryParse(number, out numberA);
+if (numberA>=10000 && numberA<=99999)
 {
-    Console.WriteLine("Число: " + number + " является палиндромом");
+    if (number[0] == number[4] && number[1] == number[3])
+    {
+        Console.WriteLine("Число: " + number + " является палиндромом");
+    }
+    else
+    {
+        Console.WriteLine("Число: " + number + " не является палиндромом");
+    }
+}
+else if (numberA<0)
+{
+    Console.WriteLine("Отрицательные числа не являются палиндромами");
 }
 else
 {
-    Console.WriteLine("Число: " + number + " не является палиндромом");
+    Console.WriteLine("Число не является пятизначным");
 }
-
-
-
